@@ -22,6 +22,8 @@ Finally, to allow formatting the data into nice-looking tables, I installed Tabu
 
 I began the programming process by setting up the Discord development environment. This included retrieving a key/token that let me connect to the bot and use the API. I then read up on Discord's Python docmentation and researched the @tags as well as the headers on Discord's Python classes. Once I became familiar with the API, I knew I needed to use @client.command() for most of the functions I'd be creating.
 
+Note: if you want to replicate this process, request a key from Discord API and declare a variable "TOKEN" as the value you receive (I did not include this in my code here for encryption/security reasons).
+
 Once I set up the general skeleton for programming Discord commands, I started exploring the ESPN API that I had decided to use. My first goal was to be able to parse the HTML text from the endpoints into JSON text for easy processing later on. In order to do this, I utilized the Requests library in Pyton and json.loads(text_variable_name). Once I got the data into a large Python dictionary, I was able to explore the patterns of ESPN's JSON text to extract the information I needed.
 
 As I progressed with retrieving data I wanted, I realized I wanted to display information (like standings) in a nice, readable format. As such, I used the Python Tabulate library which displays lists of lists, iterables of iterables, etc into visually appealing tables. For each NFL division, once I sorted the teams and their data by playoff seed, I wanted to turn the list of tuple pairs into something Tabulate could process. Therefore, I created the below algorithm to do so:
